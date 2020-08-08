@@ -27,7 +27,7 @@ As the project is currently in development, the `tasque` executable is generated
 | `d` | Delete the currently selected tile                                     |
 | `D` | Delete the currently selected list (deletes all tiles within the list) |
 | `e` | Modify the current tile                                                |
-| `q` | Quits the program                                                      |
+| `q` | Saves and quits the program                                            |
 
 Any other key pressed will result in that key's character value being printed to the command window, as well as its actual representation.
 
@@ -38,7 +38,6 @@ As this project is currently incomplete, here are some of the planned features:
 + Help panel
 + vim-like commands and command syntax
 + Color
-+ Persistence of boards, lists, and tiles through a file-storage solution
 
 As the project's development continues, more features will be added to this list. Eventually the project should be quite extensive. Any suggestions are welcome!
 

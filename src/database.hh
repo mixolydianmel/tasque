@@ -51,6 +51,8 @@ void save_all(const std::vector<Board*> &boards)
             }
         }
     }
+
+    outfile.close();
 }
 
 void load(std::vector<Board*> &boards)
@@ -59,6 +61,13 @@ void load(std::vector<Board*> &boards)
 
     std::ifstream infile;
     infile.open(savepath);
+    if (!infile.is_open())
+    {
+        boards.push_back(new Board("Example"));
+        boards.at(0)->addList(new List("List"));
+        boards.at(0)->getList(0)->addTile(new Tile("Tile", "Description"));
+        return;
+    }
 
     int currentBoard = -1;
     int currentList = -1;
@@ -94,6 +103,8 @@ void load(std::vector<Board*> &boards)
             boards.at(currentBoard)->getList(currentList)->getTile(currentTile)->setDesc(desc);
         }
     }
+
+    infile.close();
 }
 
 #endif /* TASQUE_DATABASE_HH */
