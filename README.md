@@ -1,5 +1,5 @@
 # Tasque
-> Tasque \'task\
+> Tasque \\'task\\
 > n. A Todo-List and Task Manager for the Terminal
 
 ## About
