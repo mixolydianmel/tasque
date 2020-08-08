@@ -9,7 +9,7 @@ This project is essentially a replication of the popular organization service [T
 To build, the following are required:
 + ncurses
 + gcc
-If these requirements are fulfilled, the program may be built by running the `b` executable provided in this repository. Make sure the file is marked as executable on your machine, as this may not be the case immediately after cloning the repository.
+If these requirements are fulfilled, the program may be built by running the `build` executable provided in this repository. Make sure the file is marked as executable on your machine, as this may not be the case immediately after cloning the repository.
 ### Running
 As the project is currently in development, the `tasque` executable is generated in the same directory as the build executable. Running the generated executable will launch tasque in the terminal window it was run in.
 ### Keybindings
