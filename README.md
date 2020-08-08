@@ -9,6 +9,7 @@ This project is essentially a replication of the popular organization service [T
 To build, the following are required:
 + ncurses
 + gcc
+
 If these requirements are fulfilled, the program may be built by running the `build` executable provided in this repository. Make sure the file is marked as executable on your machine, as this may not be the case immediately after cloning the repository.
 ### Running
 As the project is currently in development, the `tasque` executable is generated in the same directory as the build executable. Running the generated executable will launch tasque in the terminal window it was run in.
@@ -38,10 +39,12 @@ As this project is currently incomplete, here are some of the planned features:
 + vim-like commands and command syntax
 + Color
 + Persistence of boards, lists, and tiles through a file-storage solution
+
 As the project's development continues, more features will be added to this list. Eventually the project should be quite extensive. Any suggestions are welcome!
 
 ## Contact
 If you have any issues or questions, you can contact me at:
+
 `cadenhenrich at gmail period com`
 
 ## License
