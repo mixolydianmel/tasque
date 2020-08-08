@@ -215,7 +215,7 @@ int main() {
             case 113:
                 {
                     wclear(cmdwin);
-                    wprintw(cmdwin, "Do you really want to quit? [y/N]");
+                    wprintw(cmdwin, "Do you really want to quit (your work will be saved)? [y/N]");
                     char choice = wgetch(cmdwin);
                     if (choice == 'y')
                         run = false;
