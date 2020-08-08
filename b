@@ -1,3 +1,3 @@
 #!/bin/sh
 
-g++ -Wall -g -o a.out src/*.cc -lncurses && ./a.out
+g++ -Wall -g -o tasque src/*.cc -lncurses && ./tasque
