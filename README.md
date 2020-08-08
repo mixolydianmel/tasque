@@ -14,6 +14,7 @@ If these requirements are fulfilled, the program may be built by running the `bu
 As the project is currently in development, the `tasque` executable is generated in the same directory as the build executable. Running the generated executable will launch tasque in the terminal window it was run in.
 ### Keybindings
 > Note: For the most part, `tasque` uses vim-like keybinds.
+
 | Key | Action                                                                 |
 |-----|------------------------------------------------------------------------|
 | `h` | Select the list to the left                                            |
@@ -26,6 +27,7 @@ As the project is currently in development, the `tasque` executable is generated
 | `D` | Delete the currently selected list (deletes all tiles within the list) |
 | `e` | Modify the current tile                                                |
 | `q` | Quits the program                                                      |
+
 Any other key pressed will result in that key's character value being printed to the command window, as well as its actual representation.
 
 ## Plans
