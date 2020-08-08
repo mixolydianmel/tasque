@@ -1,5 +1,6 @@
 # Tasque
-> A Todo-List and Task Manager for the Terminal
+> Tasque \\'task\\\
+> n. A Todo-List and Task Manager for the Terminal
 
 ## About
 This project is essentially a replication of the popular organization service [Trello](https://trello.com/) for the UNIX terminal. The aim is generally to keep the code clean and concise, however that may not be the case during development. The project is written in `C++` with the `ncurses` library.
