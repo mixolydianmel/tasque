@@ -18,7 +18,7 @@ void Tile::setDesc(const std::string &desc)
 void Tile::render(WINDOW *w, int starty, int startx, int endx)
 {
     std::string print = m_title;
-    if (print.length() > endx - startx)
+    if ((int)print.length() > endx - startx)
     {
         print = print.substr(0, endx - startx - 3);
         print.append("...");

@@ -33,15 +33,13 @@ void List::setTitle(const std::string& title)
 void List::render(WINDOW *w, int starty, int startx, int endy, int endx)
 {
     std::string print = m_title;
-    if (print.length() > endx - startx)
+    if ((int)print.length() > endx - startx)
     {
         print = print.substr(0, endx - startx - 3);
         print.append("...");
     }
 
-    wattron(w, A_ITALIC);
     mvwprintw(w, starty, startx, print.c_str());
-    wattroff(w, A_ITALIC);
 
     mvwvline(w, starty, endx, ACS_VLINE, endy - starty);
     mvwhline(w, starty + 1, startx, ACS_HLINE, endx - startx);
