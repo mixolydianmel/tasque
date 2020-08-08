@@ -28,4 +28,4 @@ class Tile
         std::string m_desc;
 };
 
-#endif
+#endif /* TASQUE_TILE_HH */

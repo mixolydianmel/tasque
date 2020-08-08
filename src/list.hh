@@ -38,4 +38,4 @@ class List
         unsigned int m_length;
 };
 
-#endif
+#endif /* TASQUE_LIST_HH */

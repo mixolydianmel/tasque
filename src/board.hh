@@ -40,4 +40,4 @@ class Board
         unsigned int m_length;
 };
 
-#endif
+#endif /* TASQUE_BOARD_HH */
