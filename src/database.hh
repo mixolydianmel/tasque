@@ -34,15 +34,15 @@ void save_all(const std::vector<Board*> &boards)
     std::ofstream outfile;
     outfile.open(savepath);
 
-    for (size_t i = 0; i < boards.size(); i++)
+    for (size_t k = 0; k < boards.size(); k++)
     {
-        Board *b = boards.at(i);
+        Board *b = boards.at(k);
         outfile << "@board " << b->getTitle().c_str() << std::endl;
-        for (int i = 0; i < b->getLength(); i++)
+        for (unsigned int i = 0; i < b->getLength(); i++)
         {
             List *l = b->getList(i);
             outfile << "@list " << l->getTitle().c_str() << std::endl;
-            for (int j = 0; j < l->getLength(); j++)
+            for (unsigned int j = 0; j < l->getLength(); j++)
             {
                 Tile *t = l->getTile(j);
                 outfile << "@tile title " << t->getTitle().c_str() << std::endl;
