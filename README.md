@@ -15,7 +15,7 @@ If these requirements are fulfilled, the program may be built by running the `bu
 ### Running
 As the project is currently in development, the `tasque` executable is generated in the same directory as the build executable. Running the generated executable will launch tasque in the terminal window it was run in.
 ### Keybindings
-> Note: For the most part, `tasque` uses vim-like keybinds.
+> Note: For the most part, `tasque` uses Vim-like keybinds.
 
 | Key  | Action                                        |
 |------|-----------------------------------------------|
@@ -40,8 +40,9 @@ Any other key pressed will result in that key's character value being printed to
 As this project is currently incomplete, here are some of the planned features:
 + Viewing a tile's title and description in a separate window
 + Help panel
-+ vim-like commands and command syntax
++ Vim-like commands and command syntax
 + Color
++ Tags/Labels
 
 As the project's development continues, more features will be added to this list. Eventually the project should be quite extensive. Any suggestions are welcome!
 
