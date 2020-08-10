@@ -110,30 +110,82 @@ int main() {
                 break;
             case 'e':
                 {
-                    if (b->getLength() != 0)
+                    wclear(cmdwin);
+                    wprintw(cmdwin, "Edit: [T] Tile [L] List [B] Board");
+                    char choice = wgetch(cmdwin);
+                    switch (choice)
                     {
-                        echo();
-                        curs_set(1);
-                        wclear(cmdwin);
-                        wprintw(cmdwin, "Enter title: ");
+                        case 't':
+                            {
+                                if (b->getLength() != 0 && b->getList(curList)->getLength() != 0)
+                                {
+                                    echo();
+                                    curs_set(1);
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Enter title: ");
 
-                        char title[512];
-                        wgetnstr(cmdwin, title, 512);
+                                    char title[512];
+                                    wgetnstr(cmdwin, title, 512);
 
-                        b->getList(curList)->getTile(curTile)->setTitle(std::string(title));
+                                    b->getList(curList)->getTile(curTile)->setTitle(std::string(title));
 
-                        wclear(cmdwin);
-                        wprintw(cmdwin, "Enter description: ");
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Enter description: ");
 
-                        char desc[512];
-                        wgetnstr(cmdwin, desc, 512);
+                                    char desc[512];
+                                    wgetnstr(cmdwin, desc, 512);
 
-                        b->getList(curList)->getTile(curTile)->setDesc(std::string(desc));
+                                    b->getList(curList)->getTile(curTile)->setDesc(std::string(desc));
 
-                        wclear(cmdwin);
-                        wprintw(cmdwin, "Tile modified.");
-                        curs_set(0);
-                        noecho();
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Tile modified.");
+                                    curs_set(0);
+                                    noecho();
+                                }
+                                break;
+                            }
+                        case 'l':
+                            {
+                                if (b->getLength() != 0)
+                                {
+                                    echo();
+                                    curs_set(1);
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Enter title: ");
+
+                                    char title[512];
+                                    wgetnstr(cmdwin, title, 512);
+
+                                    b->getList(curList)->setTitle(std::string(title));
+
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "List modified.");
+                                    curs_set(0);
+                                    noecho();
+                                }
+                                break;
+                            }
+                        case 'b':
+                            {
+                                if (boards.size() != 0)
+                                {
+                                    echo();
+                                    curs_set(1);
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Enter title: ");
+
+                                    char title[512];
+                                    wgetnstr(cmdwin, title, 512);
+
+                                    b->setTitle(std::string(title));
+
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Board modified.");
+                                    curs_set(0);
+                                    noecho();
+                                }
+                                break;
+                            }
                     }
                     break;
                 }
@@ -266,7 +318,7 @@ int main() {
                             }
                         case 'b':
                             {
-                                if (boards.size() != 0)
+                                if (boards.size() > 1)
                                 {
                                     wclear(cmdwin);
                                     wprintw(cmdwin, "Are you sure you want to delete this board? [y/N]");
@@ -282,6 +334,11 @@ int main() {
                                     }
                                     else
                                         wclear(cmdwin);
+                                }
+                                else
+                                {
+                                    wclear(cmdwin);
+                                    wprintw(cmdwin, "Error: Cannot delete last remaining board.");
                                 }
                                 break;
                             }
