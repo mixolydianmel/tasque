@@ -9,6 +9,7 @@ This will all be cleaned up later. Promise ;)
 #include <ncurses.h>
 
 #include "database.hh"
+#include "info.hh"
 
 #include "board.hh"
 #include "list.hh"
@@ -53,6 +54,9 @@ int main() {
     // window to draw commands and modal stuff in
     WINDOW *cmdwin = newwin(1, xmax, ymax - 1, 0);
     keypad(cmdwin, true);
+
+    // window to display info in
+    Info info(boardwin);
 
     unsigned int curBoard = 0;
     unsigned int curList = 0;
@@ -347,6 +351,19 @@ int main() {
                     }
                     break;
                 }
+            case 10:
+                {
+                    if (!info.enabled() && b->getLength() != 0 && b->getList(curList)->getLength() != 0)
+                    {
+                        info.setTile(b->getList(curList)->getTile(curTile));
+                        info.enable();
+                    }
+                    else
+                    {
+                        info.disable();
+                    }
+                    break;
+                }
             case 'q':
                 {
                     wclear(cmdwin);
@@ -366,6 +383,7 @@ int main() {
         wclear(boardwin);
 
         draw_tasque(boards, boardwin, curBoard, curList, curTile, ymax, xmax);
+        info.render();
 
         wrefresh(cmdwin);
         wrefresh(boardwin);

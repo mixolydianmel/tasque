@@ -17,24 +17,25 @@ As the project is currently in development, the `tasque` executable is generated
 ### Keybindings
 > Note: For the most part, `tasque` uses Vim-like keybinds.
 
-| Key  | Action                                        |
-|------|-----------------------------------------------|
-| `h`  | Select the list to the left                   |
-| `j`  | Select the next tile down in the current list |
-| `k`  | Select the next tile up in the current list   |
-| `l`  | Select the list to the right                  |
-| `H`  | Select the previous board                     |
-| `L`  | Select the next board                         |
-| `at` | Add a tile to the current list                |
-| `al` | Add a list to the current board               |
-| `ab` | Add another board                             |
-| `dt` | Delete the current tile                       |
-| `dl` | Delete the current list                       |
-| `db` | Delete the current board                      |
-| `et` | Modify the current tile                       |
-| `el` | Modify the current list                       |
-| `eb` | Modify the current board                      |
-| `q`  | Saves and quits the program                   |
+| Key      | Action                                        |
+|----------|-----------------------------------------------|
+| `h`      | Select the list to the left                   |
+| `j`      | Select the next tile down in the current list |
+| `k`      | Select the next tile up in the current list   |
+| `l`      | Select the list to the right                  |
+| `H`      | Select the previous board                     |
+| `L`      | Select the next board                         |
+| `at`     | Add a tile to the current list                |
+| `al`     | Add a list to the current board               |
+| `ab`     | Add another board                             |
+| `dt`     | Delete the current tile                       |
+| `dl`     | Delete the current list                       |
+| `db`     | Delete the current board                      |
+| `et`     | Modify the current tile                       |
+| `el`     | Modify the current list                       |
+| `eb`     | Modify the current board                      |
+| `Return` | Display info for the currently selected tile  |
+| `q`      | Saves and quits the program                   |
 
 Any other key pressed will result in that key's character value being printed to the command window, as well as its actual representation.
 
