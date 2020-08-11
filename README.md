@@ -41,7 +41,6 @@ Any other key pressed will result in that key's character value being printed to
 
 ## Plans
 As this project is currently incomplete, here are some of the planned features:
-+ Viewing a tile's title and description in a separate window
 + Help panel
 + Vim-like commands and command syntax
 + Color
