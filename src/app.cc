@@ -23,7 +23,9 @@ void draw_tasque(std::vector<Board*> boards, WINDOW *boardwin, unsigned int curB
     for (unsigned int i = 0; i < b->getLength(); i++)
     {
         if (i == curList)
+        {
             wattron(boardwin, A_ITALIC);
+        }
         b->getList(i)->render(boardwin, 3, 1 + (i * 20), ymax - 2, 20 + (i * 20));
         wattroff(boardwin, A_ITALIC);
         for (unsigned int j = 0; j < b->getList(i)->getLength(); j++)
@@ -63,6 +65,7 @@ int main() {
     // window to display help menu in
     Help help(boardwin);
 
+    // keep track of selected elements
     unsigned int curBoard = 0;
     unsigned int curList = 0;
     unsigned int curTile = 0;
