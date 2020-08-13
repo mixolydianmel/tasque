@@ -34,6 +34,7 @@ As the project is currently in development, the `tasque` executable is generated
 | `et`     | Modify the current tile                       |
 | `el`     | Modify the current list                       |
 | `eb`     | Modify the current board                      |
+| `?`      | Display help menu                             |
 | `Return` | Display info for the currently selected tile  |
 | `q`      | Saves and quits the program                   |
 

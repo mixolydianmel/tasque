@@ -1,5 +1,4 @@
 #include "info.hh"
-#include <curses.h>
 
 Info::Info(WINDOW *w) :
     m_enabled(false),
@@ -33,11 +32,11 @@ void Info::render()
         mvwprintw(m_infowin, 3, 1, desc.c_str());
         wattroff(m_infowin, A_ITALIC);
 
-        mvwprintw(m_infowin, m_infowin->_maxy - 1, 1, "Press Return to continue...");
+        mvwprintw(m_infowin, m_infowin->_maxy - 1, 1, "Press `Return` to continue...");
 
         box(m_infowin, 0, 0);
-        mvwhline(m_infowin, 2, 1, ACS_HLINE, m_infowin->_maxx - 2);
-        mvwhline(m_infowin, m_infowin->_maxy - 2, 1, ACS_HLINE, m_infowin->_maxx - 2);
+        mvwhline(m_infowin, 2, 1, ACS_HLINE, m_infowin->_maxx - 1);
+        mvwhline(m_infowin, m_infowin->_maxy - 2, 1, ACS_HLINE, m_infowin->_maxx - 1);
 
         wrefresh(m_infowin);
     }

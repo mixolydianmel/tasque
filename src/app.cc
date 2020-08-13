@@ -9,7 +9,9 @@ This will all be cleaned up later. Promise ;)
 #include <ncurses.h>
 
 #include "database.hh"
+
 #include "info.hh"
+#include "help.hh"
 
 #include "board.hh"
 #include "list.hh"
@@ -57,6 +59,9 @@ int main() {
 
     // window to display info in
     Info info(boardwin);
+
+    // window to display help menu in
+    Help help(boardwin);
 
     unsigned int curBoard = 0;
     unsigned int curList = 0;
@@ -351,6 +356,14 @@ int main() {
                     }
                     break;
                 }
+            case '?':
+                {
+                    if (help.enabled())
+                        help.disable();
+                    else
+                        help.enable();
+                    break;
+                }
             case 10:
                 {
                     if (!info.enabled() && b->getLength() != 0 && b->getList(curList)->getLength() != 0)
@@ -384,6 +397,7 @@ int main() {
 
         draw_tasque(boards, boardwin, curBoard, curList, curTile, ymax, xmax);
         info.render();
+        help.render();
 
         wrefresh(cmdwin);
         wrefresh(boardwin);
