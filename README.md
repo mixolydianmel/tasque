@@ -42,9 +42,11 @@ Any other key pressed will result in that key's character value being printed to
 ## Plans
 As this project is currently incomplete, here are some of the planned features:
 + Help panel
-+ Vim-like commands and command syntax
 + Color
++ Scrolling over lists if they extend past the board edge
++ Resizing
 + Tags/Labels
++ Vim-like commands and command syntax
 
 As the project's development continues, more features will be added to this list. Eventually the project should be quite extensive. Any suggestions are welcome!
 
