@@ -42,7 +42,6 @@ Any other key pressed will result in that key's character value being printed to
 
 ## Plans
 As this project is currently incomplete, here are some of the planned features:
-+ Help panel
 + Color
 + Scrolling over lists if they extend past the board edge
 + Resizing
