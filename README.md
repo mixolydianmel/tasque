@@ -6,14 +6,24 @@
 This project is essentially a replication of the popular organization service [Trello](https://trello.com/) for the UNIX terminal. The aim is generally to keep the code clean and concise, however that may not be the case during development. The project is written in `C++` with the `ncurses` library.
 
 ## Usage
+
 ### Building
 To build, the following are required:
 + ncurses
-+ gcc
++ gcc / g++
++ make
 
-If these requirements are fulfilled, the program may be built by running the `build` executable provided in this repository. Make sure the file is marked as executable on your machine, as this may not be the case immediately after cloning the repository.
+If these requirements are fulfilled, the program may be built by running `make clean install`. This will likely require root user permissions, as the executable is installed in `/usr/local/bin`.
+
 ### Running
-As the project is currently in development, the `tasque` executable is generated in the same directory as the build executable. Running the generated executable will launch tasque in the terminal window it was run in.
+After building, the user can run the command "`tasque`" in a terminal emulator.
+
+### Directories
+| Directory         | Purpose                   |
+|-------------------|---------------------------|
+| `/usr/local/bin`  | Executable                |
+| `~/.cache/tasque` | Stores data in `data.tsq` |
+
 ### Keybindings
 > Note: For the most part, `tasque` uses Vim-like keybinds.
 
@@ -46,7 +56,6 @@ As this project is currently incomplete, here are some of the planned features:
 + Scrolling over lists if they extend past the board edge
 + Resizing
 + Tags/Labels
-+ Vim-like commands and command syntax
 
 As the project's development continues, more features will be added to this list. Eventually the project should be quite extensive. Any suggestions are welcome!
 
