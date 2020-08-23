@@ -6,6 +6,7 @@
 #include <ncurses.h>
 
 #include "list.hh"
+#include "colors.hh"
 
 class Board
 {

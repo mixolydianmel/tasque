@@ -19,6 +19,7 @@ Help::Help(WINDOW *w) :
     m_keybinds["et    "] = "Modify the current tile";
     m_keybinds["el    "] = "Modify the current list";
     m_keybinds["eb    "] = "Modify the current board";
+    m_keybinds["s     "] = "Saves all boards";
     m_keybinds["?     "] = "Display help menu";
     m_keybinds["Return"] = "Display info for the currently selected tile";
     m_keybinds["q     "] = "Saves and quits the program";

@@ -49,7 +49,10 @@ void List::render(WINDOW *w, int starty, int startx, int endy, int endx, bool se
     wattroff(w, COLOR_PAIR(T_COLOR_SELECTED));
 
     mvwvline(w, starty, endx, ACS_VLINE, endy - starty);
+    if (selected)
+        wattron(w, COLOR_PAIR(T_COLOR_SELECTED));
     mvwhline(w, starty + 1, startx, ACS_HLINE, endx - startx);
+    wattroff(w, COLOR_PAIR(T_COLOR_SELECTED));
 
     wrefresh(w);
 }

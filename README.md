@@ -44,6 +44,7 @@ After building, the user can run the command "`tasque`" in a terminal emulator.
 | `et`     | Modify the current tile                       |
 | `el`     | Modify the current list                       |
 | `eb`     | Modify the current board                      |
+| `s`      | Saves all boards                              |
 | `?`      | Display help menu                             |
 | `Return` | Display info for the currently selected tile  |
 | `q`      | Saves and quits the program                   |

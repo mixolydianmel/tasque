@@ -44,7 +44,7 @@ int main() {
     use_default_colors();
 
     init_pair(T_COLOR_NORMAL, -1, -1);
-    init_pair(T_COLOR_SELECTED, COLOR_RED, -1);
+    init_pair(T_COLOR_SELECTED, COLOR_BLUE, -1);
 
     // get the dimensions of the standard screen
     int ymax, xmax;
@@ -360,6 +360,13 @@ int main() {
                     }
                     break;
                 }
+            case 's':
+                {
+                    save_all(boards);
+                    wclear(cmdwin);
+                    wprintw(cmdwin, "Saved boards.");
+                    break;
+                }
             case '?':
                 {
                     if (help.enabled())
@@ -384,7 +391,7 @@ int main() {
             case 'q':
                 {
                     wclear(cmdwin);
-                    wprintw(cmdwin, "Do you really want to quit (your work will be saved)? [y/N]");
+                    wprintw(cmdwin, "Do you really want to quit? [y/N]");
                     char choice = wgetch(cmdwin);
                     if (choice == 'y')
                         run = false;
@@ -408,7 +415,6 @@ int main() {
         refresh();
     }
 
-    save_all(boards);
     endwin(); // stop curses context
 
     return 0;

@@ -33,8 +33,10 @@ void Board::delLists(unsigned int start, unsigned int end)
 void Board::render(WINDOW *w, int x)
 {
     wattron(w, A_BOLD);
+    wattron(w, COLOR_PAIR(T_COLOR_SELECTED));
     mvwprintw(w, 1, 1, m_title.c_str());
     wattroff(w, A_BOLD);
+    wattroff(w, COLOR_PAIR(T_COLOR_SELECTED));
 
     box(w, 0, 0);
     mvwhline(w, 2, 1, ACS_HLINE, x - 2);
