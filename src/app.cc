@@ -1,11 +1,3 @@
-/*
-WARNING:
-This code is in development.
-It is messy.
-It is poorly formatted.
-It is an absolute travesty.
-This will all be cleaned up later. Promise ;)
-*/
 #include <ncurses.h>
 
 #include "database.hh"
@@ -22,12 +14,7 @@ void draw_tasque(std::vector<Board*> boards, WINDOW *boardwin, unsigned int curB
     Board *b = boards.at(curBoard);
     for (unsigned int i = 0; i < b->getLength(); i++)
     {
-        if (i == curList)
-        {
-            wattron(boardwin, A_ITALIC);
-        }
-        b->getList(i)->render(boardwin, 3, 1 + (i * 20), ymax - 2, 20 + (i * 20));
-        wattroff(boardwin, A_ITALIC);
+        b->getList(i)->render(boardwin, 3, 1 + (i * 20), ymax - 2, 20 + (i * 20), (i == curList));
         for (unsigned int j = 0; j < b->getList(i)->getLength(); j++)
         {
             if (i == curList && j == curTile)
@@ -44,6 +31,20 @@ int main() {
     initscr();
     cbreak();
     noecho();
+
+    // color
+    if (!has_colors())
+    {
+        endwin();
+        printf("[Error] Your terminal does not support color\n");
+        return 1;
+    }
+
+    start_color();
+    use_default_colors();
+
+    init_pair(T_COLOR_NORMAL, -1, -1);
+    init_pair(T_COLOR_SELECTED, COLOR_RED, -1);
 
     // get the dimensions of the standard screen
     int ymax, xmax;

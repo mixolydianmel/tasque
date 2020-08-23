@@ -30,7 +30,7 @@ void List::setTitle(const std::string& title)
     m_title = title;
 }
 
-void List::render(WINDOW *w, int starty, int startx, int endy, int endx)
+void List::render(WINDOW *w, int starty, int startx, int endy, int endx, bool selected)
 {
     std::string print = m_title;
     if ((int)print.length() > endx - startx)
@@ -39,7 +39,14 @@ void List::render(WINDOW *w, int starty, int startx, int endy, int endx)
         print.append("...");
     }
 
+    if (selected)
+    {
+        wattron(w, A_ITALIC);
+        wattron(w, COLOR_PAIR(T_COLOR_SELECTED));
+    }
     mvwprintw(w, starty, startx, print.c_str());
+    wattroff(w, A_ITALIC);
+    wattroff(w, COLOR_PAIR(T_COLOR_SELECTED));
 
     mvwvline(w, starty, endx, ACS_VLINE, endy - starty);
     mvwhline(w, starty + 1, startx, ACS_HLINE, endx - startx);

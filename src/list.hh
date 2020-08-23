@@ -6,6 +6,7 @@
 #include <ncurses.h>
 
 #include "tile.hh"
+#include "colors.hh"
 
 class List
 {
@@ -31,7 +32,7 @@ class List
         void setTitle(const std::string& title);
 
         // Draws the list.
-        void render(WINDOW *w, int starty, int startx, int endy, int endx);
+        void render(WINDOW *w, int starty, int startx, int endy, int endx, bool selected);
     private:
         std::vector<Tile*> m_tiles;
         std::string m_title;

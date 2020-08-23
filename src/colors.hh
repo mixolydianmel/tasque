@@ -1,0 +1,7 @@
+#ifndef TASQUE_COLORS_HH
+#define TASQUE_COLORS_HH
+
+#define T_COLOR_NORMAL 0
+#define T_COLOR_SELECTED 1
+
+#endif /* TASQUE_COLORS_HH */
